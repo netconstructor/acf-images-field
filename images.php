@@ -100,16 +100,10 @@ class Images_field extends acf_Field
 			.acf_images_uploader.active .images {
 				display: block;
 			}
-			.acf_images_uploader .acf_images_empty {
-				display: inline;
-			}
-			.acf_images_uploader.active .acf_images_empty {
-				display: none;
-			}
 			.acf_images_uploader .image {
 				position: relative;
 				display: inline-block;
-				margin: 8px;
+				margin: 2px 14px 14px 2px;
 			}
 			.acf_images_uploader a.remove_image {
 				width: 16px;
@@ -137,12 +131,16 @@ class Images_field extends acf_Field
 				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 			}
 			
-			.acf_images_uploader p {
-				display: block;
-				margin: 0 !important;
+			.acf_images_uploader .acf_add_images {
 				clear: both;
-				padding: 8px;
 			}
+			.acf_images_uploader .acf_add_images span {
+				display: inline;
+			}
+			.acf_images_uploader.active .acf_add_images span {
+				display: none;
+			}
+			
 		</style>
 		
 		<script type="text/javascript">
@@ -254,8 +252,8 @@ class Images_field extends acf_Field
 		}
 		// html
 		echo '<div class="acf_images_uploader ' . $class . '" data-preview_size="' . $preview_size . '">';
-		echo '<p><span class="acf_images_empty">'.__('No images selected','acf').'. </span><input type="button" class="button" value="'.__('Add Images','acf').'" /></p>';
 		
+		// display existing images
 		echo '<div class="images">'; 
 		if ($files) {
 			foreach ($files as $file) {
@@ -266,7 +264,9 @@ class Images_field extends acf_Field
 				echo '</div>';	
 			}
 		}
-		echo '</div>';	
+		echo '</div>';
+		
+		echo '<p class="acf_add_images"><span>'.__('No images selected','acf').'. </span><input type="button" class="button" value="'.__('Add Images','acf').'" /></p>';
 	
 		echo '<input class="value" type="hidden" name="' . $field['name'] . '" value="' . $field['value'] . '" />';
 		echo '</div>';
@@ -432,7 +432,7 @@ class Images_field extends acf_Field
 					
 				});
 				
-			 	self.parent.acf_div.find('.images').append('<div class="image" data-id="<?php echo $id; ?>"><a href="#" class="remove_image"></a><img src="<?php echo $file_src; ?>" alt="Image" /></div>');
+			 	self.parent.acf_div.find('.acf_add_images').before('<div class="image" data-id="<?php echo $id; ?>"><a href="#" class="remove_image"></a><img src="<?php echo $file_src; ?>" alt="Image" /></div>');
 			 	
 			 	self.parent.acf_div.addClass('active');
 			 	

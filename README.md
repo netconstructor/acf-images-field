@@ -1,3 +1,3 @@
-Advanced Custom Fields - Images Field extension
+Advanced Custom Fields - Images Field Extension
 ==============================================
 
