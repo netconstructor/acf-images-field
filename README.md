@@ -8,4 +8,4 @@ Installation
 ------------
 
 In your functions.php
-`register_field('Price_field', dirname(__File__) . '/fields/images.php');`
+`register_field('Images_field', dirname(__File__) . '/fields/images.php');`
