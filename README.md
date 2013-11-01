@@ -11,3 +11,7 @@ Installation
 
 In your functions.php
 `register_field('Images_field', dirname(__File__) . '/fields/images.php');`
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/netconstructor/acf-images-field/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
